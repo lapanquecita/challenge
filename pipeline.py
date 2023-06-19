@@ -30,7 +30,7 @@ def train_model():
 
     # We split the data for training and testing the model.
     X_train, X_test, y_train, y_test = train_test_split(
-        X, y, random_state=0)
+        X, y, random_state=0, test_size=0.25)
 
     # We create and fit the model.
     my_model = XGBClassifier(
