@@ -72,7 +72,7 @@ def predict_new():
     data = {"target": data}
 
     # We save the results to a JSON file.
-    json.dump(data, open("target.json", "w"))
+    json.dump(data, open("./predictions.json", "w"))
 
 
 def optimize_parameters():
