@@ -1,4 +1,4 @@
-# Danoneh Hackathon - Data Science Challenge
+# Danone Hackathon - Data Science Challenge
 
 For this challenge we needed to classify the ecoscore for each product in the test dataset.
 
