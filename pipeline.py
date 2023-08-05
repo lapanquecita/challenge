@@ -39,11 +39,13 @@ def train_model():
         learning_rate=0.3,
         max_depth=6,
     )
+    
     my_model.fit(X_train, y_train)
 
     # We test our model and get the F1-score.
     y_pred = my_model.predict(X_test)
 
+    # We calculate the F1-score.
     score = f1_score(y_test, y_pred, average="weighted")
     print("F1-Score:", score)
 
@@ -52,9 +54,12 @@ def train_model():
 
 
 def predict_new():
-
+    """
+    This function loads our previously generated model and creates the required predictions.
+    """
+    
     # We load the previously generated model.
-    loaded_model = pickle.load(open(MODEL_FILENAME, 'rb'))
+    loaded_model = pickle.load(open(MODEL_FILENAME, "rb"))
 
     # We load the test dataset.
     df = pd.read_csv("./assets/test_products.csv")
@@ -62,10 +67,12 @@ def predict_new():
     # Select the features we will use.
     features = df.iloc[:, 4:]
 
+    # We create the predictions.
     new_predictions = loaded_model.predict(features)
 
     data = dict()
 
+    # We save the predictions as integers.
     for index, item in enumerate(new_predictions):
         data[index] = int(item)
 
