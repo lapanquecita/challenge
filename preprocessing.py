@@ -58,7 +58,7 @@ def extract_top_categories():
         categories = v["categories_hierarchy"]
         data.append(categories[0])
 
-    # We check how many materials we have.
+    # We check how many categories we have.
     print(len(data))
 
     # We turn the list into a set to remove duplicates.
@@ -68,7 +68,6 @@ def extract_top_categories():
     # We save the list to a .txt file.
     open("./assets/top_categories.txt", "w",
          encoding="utf-8").write("\n".join(data))
-    i = 1
 
 
 def process_file(file):
